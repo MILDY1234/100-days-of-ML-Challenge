@@ -9,3 +9,4 @@ Distributions allow us to characterize a large number of values using a smaller 
 
 The standard deviation can be used to quickly estimate how extreme a given value is under the assumption that it came from a normal distribution. The 68-95-99.7 rule states that 68 percent of the values in a normal distribution fall within one standard deviation of the mean, while 95 percent and 99.7 percent of the values fall within two and three standard deviations, respectively. 
 
+Applying this information to the used car data, we know that since the mean and standard deviation of price were $12,962 and $3,122, respectively, assuming that the prices are normally distributed, approximately 68 percent of cars in our data were advertised at prices between $12,962 - $3,122 = $9,840 and $12,962 + $3,122 = $16,804.

@@ -18,3 +18,13 @@ In the scatterplot we obtained via the code(in folder: Day1), the relationship w
 To examine a relationship between two nominal variables, a two-way cross-tabulation is used (also known as a crosstab or contingency table). A cross-tabulation is similar to a scatterplot in that it allows us to examine how the values of one variable vary by the values of another. The format is a table in which the rows are the levels of one variable, while the columns are the levels of another.
 
 There is a wealth of data in the CrossTable() output. The legend at the top (labeled Cell Contents) indicates how to interpret each value. The rows in the table indicate the three models of used cars: SE, SEL, and SES (plus an additional row for the total across all models). The columns indicate whether or not the car's color is conservative (plus a column totaling across both types of color). The first value in each cell indicates the number of cars with that combination of model and color. The proportions indicate that the cell's proportion is relative to the chi-square statistic, row's total, column's total, and table's total.What we are most interested in is the row proportion for conservative cars for each model. The row proportions tell us that 0.654 (65 percent) of SE cars are colored conservatively in comparison to 0.696 (70 percent) of SEL cars and 0.653 (65 percent) of SES. These differences are relatively small, suggesting that there are no substantial differences in the types of colors chosen by the model of the car.
+
+
+## Day 1:
+
+### Lazy Learning: Nearest Neighbour 
+
+Its a method to measure the similarity of two examples using distance. Despite the simplicity of this idea, nearest neighbor methods are extremely powerful. They have been used successfully for:
+1. Computer vision applications, including optical character recognition and facial recognition in both still images and video
+2. Predicting whether a person will enjoy a movie or music recommendation
+3. Identifying patterns in genetic data, perhaps to use them in detecting specific proteins or diseases

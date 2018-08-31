@@ -20,7 +20,7 @@ To examine a relationship between two nominal variables, a two-way cross-tabulat
 There is a wealth of data in the CrossTable() output. The legend at the top (labeled Cell Contents) indicates how to interpret each value. The rows in the table indicate the three models of used cars: SE, SEL, and SES (plus an additional row for the total across all models). The columns indicate whether or not the car's color is conservative (plus a column totaling across both types of color). The first value in each cell indicates the number of cars with that combination of model and color. The proportions indicate that the cell's proportion is relative to the chi-square statistic, row's total, column's total, and table's total.What we are most interested in is the row proportion for conservative cars for each model. The row proportions tell us that 0.654 (65 percent) of SE cars are colored conservatively in comparison to 0.696 (70 percent) of SEL cars and 0.653 (65 percent) of SES. These differences are relatively small, suggesting that there are no substantial differences in the types of colors chosen by the model of the car.
 
 
-## Day 1:
+## Day 2:
 
 ### Lazy Learning: Nearest Neighbour 
 

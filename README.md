@@ -28,3 +28,8 @@ Its a method to measure the similarity of two examples using distance. Despite t
 1. Computer vision applications, including optical character recognition and facial recognition in both still images and video
 2. Predicting whether a person will enjoy a movie or music recommendation
 3. Identifying patterns in genetic data, perhaps to use them in detecting specific proteins or diseases
+
+The k-NN algorithm treats the features as coordinates in a multidimensional feature space. Traditionally, the k-NN algorithm uses Euclidean distance, which is the distance one would measure if it were possible to use a ruler to connect two points.
+Euclidean distance is specified by the following formula, where p and q are the examples to be compared, each having n features. The term p1 refers to the value of the first feature of example p, while q1 refers to the value of the first feature of example q:
+
+dist(p,q)=sqrt[(p1-q1)^2+(p2-q1)^2+....+(pn-qn)^2]

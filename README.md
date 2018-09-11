@@ -33,3 +33,7 @@ The k-NN algorithm treats the features as coordinates in a multidimensional feat
 Euclidean distance is specified by the following formula, where p and q are the examples to be compared, each having n features. The term p1 refers to the value of the first feature of example p, while q1 refers to the value of the first feature of example q:
 
 dist(p,q)=sqrt[(p1-q1)^2+(p2-q1)^2+....+(pn-qn)^2]
+
+### Choosing an appropriate k
+
+The decision of how many neighbors to use for k-NN determines how well the model will generalize to future data. The balance between overfitting and underfitting the training data is a problem known as bias-variance tradeoff. 

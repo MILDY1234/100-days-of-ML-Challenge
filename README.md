@@ -39,3 +39,14 @@ dist(p,q)=sqrt[(p1-q1)^2+(p2-q1)^2+....+(pn-qn)^2]
 The decision of how many neighbors to use for k-NN determines how well the model will generalize to future data. The balance between overfitting and underfitting the training data is a problem known as bias-variance tradeoff. 
 In practice, choosing k depends on the difficulty of the concept to be learned, and the number of records in the training data. One common practice is to begin with k equal to the square root of the number of training examples. 
 An alternative approach is to test several k values on a variety of test datasets and choose the one that delivers the best classification performance. 
+
+Classification algorithms based on the nearest neighbor methods are considered lazy learning algorithms because, technically speaking, no abstraction occurs.
+
+## Day 3:
+
+### Diagnosing breast cancer with the k-NN algorithm
+
+During regular examinations, the sample cells are extracted from the mass and examined. If machine learning could automate the identification of cancerous cells, it would provide considerable benefit to the health system. Automated processes are likely to improve the efficiency of the detection process, allowing physicians to spend less time diagnosing and more time treating the disease. 
+
+### Step 1 – collecting data
+We will utilize the Wisconsin Breast Cancer Diagnostic dataset from the UCI Machine Learning Repository at http://archive.ics.uci.edu/ml.

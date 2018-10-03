@@ -50,3 +50,25 @@ During regular examinations, the sample cells are extracted from the mass and ex
 
 ### Step 1 – collecting data
 We will utilize the Wisconsin Breast Cancer Diagnostic dataset from the UCI Machine Learning Repository at http://archive.ics.uci.edu/ml.
+
+### Step 2 – exploring and preparing the data
+TRANSFORMATION – NORMALIZING NUMERIC DATA:
+To normalize these features, we need to create a normalize() function in R. This function takes a vector x of numeric values, and for each value in x, subtracts the minimum value in x and divides by the range of values in x. Finally, the resulting vector is returned.
+
+### Step 3 – training a model on the data
+The knn() function in the class package provides a standard, classic implementation of the k-NN algorithm. For each instance in the test data, the function will identify the k-Nearest Neighbors, using Euclidean distance, where k is a user-specified number. 
+
+### Step 4 – evaluating model performance
+The next step of the process is to evaluate how well the predicted classes in the wbcd_test_pred vector match up with the known values in the wbcd_test_labels vector. We will use CrossTable() function in the gmodels package.
+
+### Step 5 – improving model performance
+Transformation – z-score standardization
+To standardize a vector, we can use the R's built-in scale() function, which, by default, rescales values using the z-score standardization. The scale() function offers the additional benefit that it can be applied directly to a data frame, so we can avoid the use of the lapply() function.
+
+### Testing alternative values of K
+We may be able do even better by examining performance across various k values. Using the normalized training and test datasets, the same 100 records were classified using several different k values. 
+
+
+
+
+

@@ -68,6 +68,54 @@ To standardize a vector, we can use the R's built-in scale() function, which, by
 ### Testing alternative values of K
 We may be able do even better by examining performance across various k values. Using the normalized training and test datasets, the same 100 records were classified using several different k values. 
 
+## Day 4:
+
+## Classification using Naive Bayes
+
+An example to it could be Weather estimates based on probabilistic methods. They are based on past events to predict future events. A 70% chance of rain implies rain occured in 7 out of 10 past cases with similar conditions.
+
+Thomas Bayes develped foundation principles to describe probability of events and how it should be revised in light of additional information. These principles are known as Bayesian methods.
+
+Probability is a number between 0 and 1 (that is, between 0 percent and 100 percent), which captures the chance that an event will occur in the light of the available evidence. A probability of 0 indicates that the event will definitely not occur, while a probability of 1 indicates that the event will occur with 100 percent certainty.
+
+Bayesian classifiers have been used for:
+
+Text classification, such as junk e-mail (spam) filtering
+Intrusion or anomaly detection in computer networks
+Diagnosing medical conditions given a set of observed symptoms
+
+Bayesian methods provide insights into how the probability of any event can be estimated from the observed data.
+
+If it rained 3 out of 10 days the probability of rains could be estimated as 3/10=0.30 or 30%. Similarly if 10 out of 50 emails were spam the probability of any incoming messages being spam can be estimated to be 10/50=0.20 or 20%
+
+Hence to denote P which is probability of an event P(rain)=0.30 and P(spam)=0.20
+
+P(spam)=0.20 and P(ham)=1-0.20=0.80
+
+## Day 5: 
+
+### Filtering mobile phone spam using Naive Bayes algorithm
+
+### Step 1 - Collecting the data
+
+To develop the Naive Bayes classifier, we will use data adapted from the SMS Spam Collection at http://www.dt.fee.unicamp.br/~tiago/smsspamcollection/
+
+### Step 2 - Exploring and Preparing the data
+
+Using the str() function, we see that the sms_raw data frame includes 5,559 total SMS messages with two features: type and text. The SMS type has been coded as either ham or spam. The text element stores the full raw SMS text.
+
+The type element is currently a character vector. Since this is a categorical variable, it would be better to convert it into a factor.
+
+One needs to consider how to remove numbers and punctuation; handle uninteresting words such as and, but, and or; and how to break apart sentences into individual words. We will use the 'tm' package for data cleaning and preparation.
+
+The first step in processing text data involves creating a corpus, which is a collection of text documents. The documents can be short or long, from individual news articles, pages in a book or on the web, or entire books. In our case, the corpus will be a collection of SMS messages.
+
+In order to create a corpus, we'll use the VCorpus() function in the tm package, which refers to a volatile corpus—volatile as it is stored in memory as opposed to being stored on disk (the PCorpus() function can be used to access a permanent corpus stored in a database)
+
+In order to perform our analysis, we need to divide these messages into individual words. But first, we need to clean the text, in order to standardize the words, by removing punctuation and other characters that clutter the result. For example, we would like the strings Hello!, HELLO, and hello to be counted as instances of the same word.The tm_map() function provides a method to apply a transformation (also known as mapping) to a tm corpus. We will use this function to clean up our corpus using a series of transformations and save the result in a new object called corpus_clean.
+
+
+
 
 
 

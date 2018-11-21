@@ -112,10 +112,44 @@ The first step in processing text data involves creating a corpus, which is a co
 
 In order to create a corpus, we'll use the VCorpus() function in the tm package, which refers to a volatile corpus—volatile as it is stored in memory as opposed to being stored on disk (the PCorpus() function can be used to access a permanent corpus stored in a database)
 
-In order to perform our analysis, we need to divide these messages into individual words. But first, we need to clean the text, in order to standardize the words, by removing punctuation and other characters that clutter the result. For example, we would like the strings Hello!, HELLO, and hello to be counted as instances of the same word.The tm_map() function provides a method to apply a transformation (also known as mapping) to a tm corpus. We will use this function to clean up our corpus using a series of transformations and save the result in a new object called corpus_clean.
+In order to perform our analysis, we need to divide these messages into individual words. But first, we need to clean the text, in order to standardize the words, by removing punctuation and other characters that clutter the result. For example, we would like the strings Hello!, HELLO, and hello to be counted as instances of the same word.The tm_map() function provides a method to apply a transformation (also known as mapping) to a tm corpus. We will use this function to clean up our corpus using a series of transformations and save the result in a new object called corpus_clean. The series of transformations that undergo include:
+
+1. removing numbers from the SMS: we use remobeNumbers
+2. removing fillers or stop words like 'to', 'and', 'but', 'or': we use removeWords
+3. we remove punctuations using removePunctuation 
+4. we stem the words like learned, learning, learns and strips to transform into learn
+5. we remove additional whitespaces: we use stripWhitespace
+
+### Step 3 - Data Preparation
+
+With our data prepared for analysis we now split the data into training and test datasets. We'll divide the data into two portions: 75 percent for training and 25 percent for testing. Since the SMS messages are sorted in a random order, we can simply take the first 4,169 for training and leave the remaining 1,390 for testing.
 
 
+### Step 4 - Visualizing text data by creating word cloud
 
+The wordcloud package provides a simple R function to create this type of diagrams. We'll use it to visualize the types of words in SMS messages, as comparing the clouds for spam and ham will help us gauge whether our Naive Bayes spam filter is likely to be successful.
+
+### Step 5 - Creating indicator features for frequent words
+
+We transform sparse matrix into a data structure that can be used to train a Naive Bayes Classifier.
+Finding frequent words requires use of findFreqTerms() function in the tm package.
+
+### Step 6 - Training a model on the data
+
+Now that we have transformed the raw SMS messages into a format that can be represented by a statistical model, it is time to apply the Naive Bayes algorithm. The algorithm will use the presence or absence of words to estimate the probability that a given SMS message is spam.
+
+The Naive Bayes implementation we will employ is in the e1071 package.
+To build our model on the sms_train matrix, we'll use the following command:> sms_classifier <- naiveBayes(sms_train, sms_train_labels)
+
+### Step 7 - Evaluating model performance
+
+The classifier that we trained has been named sms_classifier. We will use this classifier to generate predictions and then compare the predicted values to the true values. The predict() function is used to make the predictions.
+
+### Step 8 - Improving model performance
+
+Earlier we did noty set a value for the laplace estimator while training our model. To improve the model this time we set the value for the laplace estimator as 1 and then make the prediction. Finally we will compare the predicted classes to the actual classifications using cross tabulation.
+
+Adding the Laplace estimator reduced the number of false positives (ham messages erroneously classified as spam) from six to five and the number of false negatives from 30 to 28. Although this seems like a small change, it's substantial considering that the model's accuracy was already quite impressive. We'd need to be careful before tweaking the model too much in order to maintain the balance between being overly aggressive and overly passive while filtering spam. Users would prefer that a small number of spam messages slip through the filter than an alternative in which ham messages are filtered too aggressively.
 
 
 
